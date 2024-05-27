@@ -451,7 +451,7 @@ const areaCirculo  = (radio)=> {
     Ejercicio_27
 console.log(areaCirculo(10));
 
-*/
+
 let cambioMoneda = ()=>{
     let i = 0;
     let moneda = parseFloat(prompt("Ingrese monto a convertir:"));
@@ -502,3 +502,326 @@ if(programaMoneda === 0){
 }else {
     saludo()
 }
+
+    Clase_06
+
+    Ejercicio_01_y_02
+const personas = [
+    {nombre: "johan", edad: 34, ciudad: "bogota" },
+    {nombre: "pedro", edad: 23, ciudad: "cali"},
+    {nombre: "alfonso", edad:34, ciudad: "medellin"}
+];
+console.log(personas[0]);
+personas.push({nombre:"nicolas", edad:5 ,ciudad: "bogota"});
+console.log(personas[1].edad);
+
+    Ejercicio_03_y_04
+const autos = [
+    {marca:"ford" , modelo:"fiesta" , anio: 2014},
+    {marca:"mazda" , modelo:"all new" , anio: 2015}
+];
+console.log(autos[1].modelo);
+autos.push({marca: "chevrolet", modelo:"sail", anio:2018});
+console.log(autos[2].anio);
+
+    Ejercicio_05
+function producto (nombre, precio, cantidad) {
+    this.nombre = nombre;
+    this.precio = precio;
+    this.cantidad = cantidad;
+}
+const productos = [];
+productos.push(new producto("arroz", 2500, 50));
+productos.push(new producto("papa", 600, 50));
+productos.push(new producto("shampoo", 9500, 10));
+console.log(productos);
+
+    Ejercicio_06
+function persona (nombre, edad, ciudad) {
+    this.nombre = nombre;
+    this.edad = edad;
+    this.ciudad = ciudad;
+}
+
+const personas = [];
+personas.push(new persona("johan", 28, "bogota"));
+personas.push(new persona("michael", 32, "bogota"));
+personas.push(new persona("jeimmy", 30, "medellin"));
+console.log(personas);
+
+    Ejercicio_07
+function libro (titulo, autor, anio) {
+    this.titulo = titulo;
+    this.autor = autor;
+    this.anio = anio;
+}
+const libros = [];
+libros.push(new libro("piense y hagase rico", "anonimo", 1996));
+libros.push(new libro("la disciplina marcara tu destino, ryan holiday", 2022));
+libros.push(new libro("libro prueba", "anonimo", 2015));
+
+    Clase_08 
+function rectangulo (base, altura){
+    this.base = base;
+    this.altura = altura;
+    this.calcularArea = function (){
+        return base*altura;
+    }
+}
+const rectangulos = [{
+    base: 10, altura: 15
+}];
+const rectangulo1 =  new rectangulo(rectangulos[0].base, rectangulos[0].altura);
+console.log(rectangulo1.calcularArea());
+
+    Ejercicio_09
+function circulo (radio) {
+    this.radio = radio;
+    this.calcularPerimetro = function(){
+        let pi = Math.PI;
+        return 2*pi*this.radio;
+    }
+}
+const circulos = [];
+circulos.push(new circulo(10));
+circulos.push(new circulo(7));
+circulos.push(new circulo(12));
+console.log(circulos[1].calcularPerimetro());
+
+    Ejercicio_10
+function estudiante (nombre, edad, curso) {
+    this.nombre = nombre;
+    this.edad = edad;
+    this.curso = curso;
+    this.presentarse = function() {
+        console.log(` hola mi nombre es ${nombre} tengo ${edad} años y estoy cursando ${curso}`)
+    }
+}
+let estudiantes = [];
+estudiantes.push(new estudiante("johan", 28, "programacion"));
+estudiantes.push(new estudiante("michael", 21, "logica"));
+estudiantes.push(new estudiante("santi", 20, "ingles"));
+for (let cont in estudiantes) {
+    estudiantes[cont].presentarse();
+}
+
+    Ejercicio_11_y_12
+function cuentaBancaria(saldo, titular){
+    this.saldo = saldo;
+    this.titular = titular;
+    this.depositar = function(monto){
+        this.saldo += monto;
+    }
+    this.retirar = function(monto){
+        this.saldo -= monto;
+
+    }
+}
+const cuentasBancarias = [];
+cuentasBancarias.push(new cuentaBancaria(5000, "johan"));
+cuentasBancarias.push(new cuentaBancaria(10000, "michael"));
+cuentasBancarias.push(new cuentaBancaria(500, "santi"));
+for(let cont in cuentasBancarias){
+    cuentasBancarias[cont].depositar(10100);
+}
+cuentasBancarias[1].retirar(20000);
+console.log(cuentasBancarias);
+
+    Ejercicio_13_y_14
+function agregarAgendas (listaAgendas) {
+    agendas.push(listaAgendas);
+}
+
+function agenda (){
+    this.contactos = [];
+    this.agregarContactos = function(nombre, edad , tel){
+        this.contactos.push({nombre: nombre, edad: edad, tel: tel});
+    }
+    this.bucarContacto = function (nombre){
+        return this.contactos.find(contacto => contacto.nombre == nombre)||null;
+    }
+}
+const agendas = [];
+let agenda1 = new agenda();
+let agenda2 = new agenda();
+let agenda3 = new agenda();
+agenda1.agregarContactos("johan", 35, 1123);
+agenda1.agregarContactos("alfonso", 25, 2245);
+agenda2.agregarContactos("santi", 5, 3694);
+agenda2.agregarContactos("nicolas", 38, 3696);
+agenda3.agregarContactos("jeimmy", 30, 1396);
+agregarAgendas(agenda1);
+agregarAgendas(agenda2);
+agregarAgendas(agenda3);
+let respuesta = agendas[0].bucarContacto("johan");
+console.log(agendas[0]);
+console.log(respuesta);
+
+    Ejercicio_15_y_16
+const frutas = {
+    manzana: "roja",
+    pera: "pera",
+    naranja: "naranja"
+}
+console.log("manzana" in frutas);
+const arrayFrutas = ["manzana", "pera", "naranja"];
+const arrayFrutasDos= [];
+console.log(arrayFrutas.includes("manzana"));
+for (let n in frutas){
+    arrayFrutasDos.push(n);
+}
+for(let m in arrayFrutasDos){
+    console.log(arrayFrutasDos[m]);
+}
+
+    Ejercicio_17
+class Rectangulo {
+    constructor (base,altura) {
+        this.base = base;
+        this.altura = altura;
+    }
+    calcularArea(){
+        return this.base*this.altura;
+    }
+}
+const rectangulos = [
+    new Rectangulo(5,6),
+    new Rectangulo(6,5),
+    new Rectangulo(10,8)
+];
+console.log(rectangulos[0].calcularArea());
+
+    Ejercicio_18
+class Circulo {
+    constructor(radio){
+        this.radio = radio;
+    }
+    calcularPerimetro () {
+        return 2*Math.PI*this.radio;
+    }
+}
+const circulos = [
+    new Circulo(10),
+    new Circulo(6),
+    new Circulo(15),
+];
+console.log(circulos[1].calcularPerimetro());
+
+    Ejercicio_19
+class Empleado {
+    constructor(nombre, edad, cargo) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.cargo = cargo;
+    }
+    promocionar(nuevoCargo) {
+        this.cargo = nuevoCargo;
+    }
+}
+const empleados = [
+    new Empleado( "johan", 28, "developer"),
+    new Empleado( "jeimmy", 35, "independiente"),
+    new Empleado( "michael", 35, "roscon")
+];
+empleados[0].promocionar("arquitecto");
+
+    Ejercicio_20
+class Producto {
+    constructor(nombre, precio, cantidad){
+        this.nombre = nombre;
+        this.precio = precio;
+        this.cantidad = cantidad;
+    }
+}
+const productos = [];
+productos.push(new Producto("shampoo", 500, 12));
+console.log(productos);
+
+    Ejercicio_21
+class Estudiante {
+    constructor(nombre, edad, curso) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.curso = curso;
+    }
+}
+const estudiantes = [];
+estudiantes.push(new Estudiante("johan", 27, "ingenieria"));
+estudiantes.push(new Estudiante("jeimmy", 30, "matematicas"));
+
+    Ejercicio_22
+class Libro {
+    constructor(titulo, autor, anio){
+        this.titulo = titulo;
+        this.autor = autor;
+        this.anio = anio;
+    }
+}
+const libros = [];
+libros.push(new Libro("llamado al coraje" , "Ryan Holiday", 2022));
+libros.push(new Libro("la diciplina marcara tu destino" , "Ryan Holiday", 2020));
+
+    Ejercicio_23_y_24
+const productos = [
+    {nombre: "shampoo", precio: 800, cantidad: 20}
+]
+productos.push({nombre: "acondicionador", precio: 700, cantidad: 15})
+console.log(productos[1].precio);
+
+    Ejercicio_25_y_26
+const empleados = [
+    {nombre: "johan", edad: 27, cargo: "automatizador"},
+    {nombre: "michael", edad: 33, cargo: "diseñador"},
+    {nombre: "jeimmy", edad: 30, cargo: "empaque"},
+]
+console.log(empleados[2].cargo)
+empleados.push({nombre: "alfonso", edad: 58, cargo: "confeccion"},)
+
+    Ejercicio_27
+function cuentaBancaria (saldo, titular){
+    this.saldo = saldo;
+    this.titular = titular;
+}
+const cuentasBancarias = [
+    new cuentaBancaria(50000, "johan"),
+    new cuentaBancaria(60000, "jeimmy"),
+    new cuentaBancaria(150000, "santi"),
+]
+cuentasBancarias.push(new cuentaBancaria(10000, "alfonso"));
+cuentasBancarias.push(new cuentaBancaria(1000, "elena"));
+cuentasBancarias.push(new cuentaBancaria(50, "michael"));
+console.log(cuentasBancarias);
+
+    Ejercicio_28
+function vehiculo (marca, modelo, anio) {
+    this.marca = marca;
+    this.modelo = modelo;
+    this.anio = anio;
+}
+const vehiculos = [];
+vehiculos.push(new vehiculo("ford", "fiesta", 2015))
+vehiculos.push(new vehiculo("mazda", "alegro", 2019))
+vehiculos.push(new vehiculo("chevrolet", "sail", 2020))
+console.log(vehiculos);
+
+    Ejercicio_29
+function pelicula (titulo, director, anio) {
+    this.titulo = titulo;
+    this.director = director;
+    this.anio = anio;
+}
+const vehiculos = [];
+vehiculos.push(new pelicula("amor", "chaplin", 2015))
+vehiculos.push(new pelicula("odio", "gonzalez", 2019))
+vehiculos.push(new pelicula("drama", "perdido", 2020))
+console.log(vehiculos);
+
+*/
+
+
+
+
+
+
+
+
