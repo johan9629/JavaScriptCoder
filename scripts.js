@@ -816,10 +816,92 @@ vehiculos.push(new pelicula("odio", "gonzalez", 2019))
 vehiculos.push(new pelicula("drama", "perdido", 2020))
 console.log(vehiculos);
 
+    Ejercicio_38
+class Cuadrado {
+    constructor (lado){
+        this.lado = lado;
+    }
+    calcularArea(){
+        return this.lado * this.lado;
+    }
+}
+const cuadrados = [];
+cuadrados.push(new Cuadrado(50));
+console.log(cuadrados[0].calcularArea());
+
+    Ejercicio_39
+class Cancion {
+    constructor (titulo, artista){
+        this.titulo = titulo;
+        this.artista = artista;
+    }
+    reproducir(){
+        console.log ("la cancion "+ this.titulo +" se esta reproduciendo")
+    }
+}
+const canciones = [];
+canciones.push(new Cancion("efecto vocales", "nach"));
+canciones.push(new Cancion("mama's boy", "nach"));
+console.log(canciones[0].reproducir());
+
+    Ejercicio_40
+class Compra {
+    constructor (productos){
+        this.productos = productos;
+    }
+    calcularTotal(){
+        let res = 0;
+        for (let i of this.productos){
+            res += i.precio;
+        }
+        return res;
+    }
+}
+const compras = [
+    new Compra([{producto: "shampoo", precio: 5000},{producto: "jabon", precio: 1200},{producto: "dulce", precio: 200}]),
+    new Compra([{producto: "shampoo", precio: 100},{producto: "jabon", precio: 200},{producto: "dulce", precio: 300}])
+]
+console.log(compras[0].calcularTotal());
+
+    Ejercicio_41
+
 */
 
+class TiendaOnline {
+    constructor (productos, clientes) {
+        this.productos = productos;
+        this.clientes = clientes;
+    }
 
+    agregarProducto(producto){
+        this.productos.push(producto);
+    }
 
+    agregarCliente(cliente){
+        this.clientes.push(cliente)
+    }
+
+    ventaProducto(nomProducto, cant){
+        res = this.productos.find(nomProducto).cantidad =- cant;
+        console.log(res)
+        this.enviarCorreo();
+    }
+
+    enviarCorreo(){
+        correo = this.productos.find(nomProducto).email;
+        console.log("se a enviado un correo de confirmacion a: "+ correo);
+    }
+}
+
+new TiendaOnline([
+    {nombre: "shampoo", precio: 900, cantidad: 80},
+    {nombre: "papel", precio: 2500, cantidad: 12},
+    {nombre: "manzana", precio: 1600, cantidad: 10}
+],[
+    {nombre: "johan gonzalez", email: "johan9629@hotmail.com", direccion: "trv 13i # 46-55 sur"},
+    {nombre: "micahel gonzalez", email: "michael@hotmail.com", direccion: "trv 16g # 46-55 sur"},
+    {nombre: "jeimmy ramirez", email: "jeimmy9220@hotmail.com", direccion: "trv 26i # 46-72sur"}
+])
 
 
 
