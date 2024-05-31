@@ -864,44 +864,145 @@ const compras = [
 console.log(compras[0].calcularTotal());
 
     Ejercicio_41
-
-*/
-
 class TiendaOnline {
     constructor (productos, clientes) {
         this.productos = productos;
         this.clientes = clientes;
     }
-
     agregarProducto(producto){
         this.productos.push(producto);
     }
-
     agregarCliente(cliente){
         this.clientes.push(cliente)
     }
-
-    ventaProducto(nomProducto, cant){
-        res = this.productos.find(nomProducto).cantidad =- cant;
-        console.log(res)
-        this.enviarCorreo();
+    ventaProducto(nomProducto, cant, nomCliente){
+        for (let va in this.productos){
+            if (this.productos[va].nombre == nomProducto) {
+                this.productos[va].cantidad -= cant;
+                this.enviarCorreo(nomCliente);
+            }        
+        }
+        
+            
+        
     }
-
-    enviarCorreo(){
-        correo = this.productos.find(nomProducto).email;
-        console.log("se a enviado un correo de confirmacion a: "+ correo);
+    enviarCorreo(nomCliente){
+        let correo = this.clientes.find(p => p.nombre == nomCliente);
+        console.log("se a enviado un correo de confirmacion a: "+ correo.email);
     }
 }
-
-new TiendaOnline([
+const tienda1 = new TiendaOnline([
     {nombre: "shampoo", precio: 900, cantidad: 80},
     {nombre: "papel", precio: 2500, cantidad: 12},
     {nombre: "manzana", precio: 1600, cantidad: 10}
 ],[
     {nombre: "johan gonzalez", email: "johan9629@hotmail.com", direccion: "trv 13i # 46-55 sur"},
     {nombre: "micahel gonzalez", email: "michael@hotmail.com", direccion: "trv 16g # 46-55 sur"},
-    {nombre: "jeimmy ramirez", email: "jeimmy9220@hotmail.com", direccion: "trv 26i # 46-72sur"}
+    {nombre: "jeimmy ramirez", email: "jeimmy9220@hotmail.com", direccion: "trv 26i # 46-72 norte"}
 ])
+console.log(tienda1);
+console.log(tienda1);
+tienda1.ventaProducto("shampoo", 1, "micahel gonzalez");
+
+
+    CLASE_07
+
+    Ejercicio_01
+const numero = [1,2,3,4,5,6,7,8,9];
+numero.forEach(element=>console.log(element));
+
+    Ejercicio_02
+const num = [6,9,23,894,2,4,304,93,48,1];
+let n = num.find(element => element > 50);
+console.log(n);
+
+    Ejercicio_03
+const num = [6,9,23,894,2,4,304,93,48,1];
+let n = num.filter(element => element%2 == 0);
+
+    Ejercicio_04
+const cont = ["johan", "hola", "paranguatimiricuaro", "perro", "santi"];
+let n = cont.some(element => element.length > 10);
+
+    Ejercicio_05
+const numeros = [2,5,8,12,56,23];
+let n = numeros.map( element => element * 2);
+
+    Ejercicio_06
+const numeros = [2,5,18,1,5,2];
+const iniValue = 0;
+let n = numeros.reduce( (element,current) => element + current, iniValue);
+
+    Ejercicio_07
+const cont = ["johan", "andrea","hola", "paranguatimiricuaro", "perro", "santi"];
+let n = cont.sort();
+
+    Ejercicio_08
+    class Alumno {
+    constructor(nombre, edad, notas) {
+        this.nombre = nombre;~
+        this.edad = edad;
+        this.notas = notas;
+    }
+    promedio() {
+        let suma = this.notas.reduce((cont, elem)=> cont + elem, 0);
+        return suma / this.notas.length
+    }
+}
+const alumno1 = new Alumno("johan", 28, [3.8, 4.1, 5, 4.8]);
+const alumno2 = new Alumno("michael", 28, [3.6, 4.3, 4.3, 4.8]);
+const alumno3 = new Alumno("michael", 28, [2.6, 1.3, 4.3, 4.8]);
+const alumnos = [];
+alumnos.push(alumno1);
+alumnos.push(alumno2);
+alumnos.push(alumno3);
+console.log(alumnos);
+alumnos.forEach( alumno => {
+    console.log(` El promedio de notas de ${alumno.nombre} es ${alumno.promedio()}`);
+});
+const mejorPromedio = alumnos.reduce((acumulado, actual) => {
+    return (actual.promedio() > acumulado.promedio()) ? actual : acumulado;
+})
+console.log(`el alumno con el mejor promedio es ${mejorPromedio.nombre} con un promedio de ${mejorPromedio.promedio()} `);
+
+    Ejercicio_09
+const grados = [8, 10, 8, 50, 17];
+let resultado = grados.map(e =>  e * 33.8 );
+
+    Ejercicio_10
+const array = [28, 80, 51, 30];
+let n = array.filter(e => e > 50);
+
+    Ejercicio_11
+const array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let a = array.forEach(e => console.log(e * 5));
+
+    Ejercicio_12
+
+    Ejercicio_13
+const alumnos = [
+    {nombre: "johan", edad: 25},
+    {nombre: "santi", edad: 5},
+    {nombre: "jeimmy", edad: 35},
+    {nombre: "michael", edad: 15}
+]
+let a = alumnos.some(e => e.edad > 18);
+
+    Ejercicio_14
+const array =  [5, 8, 0, 2, 5];
+const a = array.reduce((acumulado, actual) => acumulado * actual, 1)
+
+    Ejercicio_15
+const fechas = [new Date("10/12/1996"),new Date("12/29/2010"), new Date ("10/12/2015"), new Date("10/12/1995")];
+const e = fechas.sort((a, b) => a - b );
+
+    Ejercicio_16
+
+
+
+*/
+
+
 
 
 
