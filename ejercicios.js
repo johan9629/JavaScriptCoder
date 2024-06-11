@@ -1292,8 +1292,1332 @@ class Tareas {
 
     
 
-*/
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    Clase_11
+
+    Ejercicio_01
+const contenedor = document.querySelector("div");
+const boton =  document.createElement("button");
+boton.textContent = "Click";
+contenedor.appendChild(boton);
+boton.addEventListener("click", () => {
+    console.log("Bienvenidos");
+})
+
+    Ejercicio_02
+const contenedor = document.querySelector("div");
+const boton =  document.createElement("button");
+const p = document.createElement("p");
+p.textContent = "bienvenidos";
+boton.textContent = "Click";
+contenedor.appendChild(p);
+contenedor.appendChild(boton);
+boton.addEventListener("click", () => {
+    p.textContent = "Ya no son bienvenidos";
+})
+
+    Ejercicio_03
+const contenedor = document.querySelector("div");
+const boton =  document.createElement("button");
+const ul = document.createElement("ul");
+boton.textContent = "Click";
+const lista = ["ford", "porshe", "mazda", "chevrolet"]
+contenedor.appendChild(boton);
+boton.addEventListener("click", () => {
+    lista.forEach((element) => {
+        const li = document.createElement("li");
+        li.textContent = element;
+        ul.appendChild(li);
+    })
+})
+contenedor.appendChild(ul)
+
+
+    Ejercicio_04
+const contenedor = document.querySelector("div");
+const boton =  document.createElement("button");
+const p = document.createElement("p");
+p.textContent = "Bienvenidos";
+boton.textContent = "Click";
+contenedor.appendChild(p);
+contenedor.appendChild(boton);
+boton.addEventListener("click", () => {
+    p.style.color = "red"
+    contenedor.style.backgroundColor = "black";
+})
+
+
+    Ejercicio_05
+const contenedor = document.querySelector("div");
+const boton =  document.createElement("button");
+const p = document.createElement("p");
+p.style.color = "red"
+p.textContent = "Bienvenidos";
+boton.textContent = "Click";
+contenedor.style.backgroundColor = "black";
+contenedor.appendChild(p);
+contenedor.appendChild(boton);
+boton.addEventListener("click", () => {
+    contenedor.style.visibility = "hidden";
+})
+
+    Ejercicio_06
+const contenedor = document.querySelector("div");
+const boton =  document.createElement("button");
+const input = document.createElement("input");
+input.placeholder = "Escribe"
+const p = document.createElement("p");
+boton.textContent = "Click";
+contenedor.appendChild(input);
+contenedor.appendChild(boton);
+contenedor.appendChild(p);
+boton.addEventListener("click", () => {
+    p.textContent = input.value;
+})
+
+    Ejercicio_07
+const contenedor = document.querySelector("div");
+const boton =  document.createElement("button");
+const input = document.createElement("input");
+input.placeholder = "Escribe";
+const img = document.createElement("img");
+img.src = "./img2.jpeg";
+const p = document.createElement("p");
+boton.textContent = "Click";
+contenedor.appendChild(input);
+contenedor.appendChild(boton);
+contenedor.appendChild(p);
+contenedor.appendChild(img);
+boton.addEventListener("click", () => {
+    img.src = "./img1.avif";
+    p.textContent = input.value;
+    p.className = "parrafo";
+})
+
+    Ejercicio_08
+const contenedor = document.querySelector("div");
+const boton =  document.createElement("button");
+const input = document.createElement("input");
+input.placeholder = "Escribe"
+const p = document.createElement("p");
+boton.textContent = "Click";
+contenedor.appendChild(input);
+contenedor.appendChild(boton);
+contenedor.appendChild(p);
+boton.addEventListener("click", () => {
+    p.textContent = input.value;
+    p.className = "parrafo";
+})
+
+    Ejercicio_09
+
+
+    Ejercicio_10
+const contenedor = document.querySelector("div");
+const boton =  document.createElement("button");
+const select = document.createElement("select");
+const option1 = document.createElement("option");
+option1.value = "Nissan"
+option1.textContent = "Nissan";
+const option2 = document.createElement("option");
+option2.value = "Porshe"
+option2.textContent = "Porshe";
+const img = document.createElement("img");
+img.src = "./img2.jpeg";
+const p = document.createElement("p");
+boton.textContent = "Click";
+contenedor.appendChild(select);
+select.appendChild(option1);
+select.appendChild(option2);
+contenedor.appendChild(boton);
+contenedor.appendChild(p);
+contenedor.appendChild(img);
+boton.addEventListener("click", () => {
+    p.textContent = select.value;
+    p.className = "parrafo";
+});
+
+    Ejercicio_11
+const contenedor = document.querySelector("div");
+const boton = document.createElement("button");
+boton.textContent = "Click";
+let guardar = "este mensaje es para guradar en el local storage";
+contenedor.appendChild(boton);
+boton.addEventListener("click", (e) => {
+    e.preventDefault();
+    localStorage.setItem("valor 1",guardar);
+})
+
+    Ejercicio_12
+const contenedor = document.querySelector("div");
+const div = document.createElement("div");
+const boton = document.createElement("button");
+boton.textContent = "Click";
+let guardar = "este mensaje es para guradar en el local storage";
+contenedor.appendChild(boton);
+contenedor.appendChild(div);
+boton.addEventListener("click", (e) => {
+    e.preventDefault();
+    localStorage.setItem("valor 1",guardar);
+})
+div.textContent = localStorage.getItem("valor 1");
+
+    Ejercicio_13
+const contenedor = document.querySelector("div");
+const div = document.createElement("div");
+const boton = document.createElement("button");
+boton.textContent = "Click";
+let guardar = "este mensaje es para guradar en el sesion storage";
+contenedor.appendChild(boton);
+contenedor.appendChild(div);
+boton.addEventListener("click", (e) => {
+    e.preventDefault();
+    sessionStorage.setItem("valor 1",guardar);
+})
+
+    Ejercicio_14
+const contenedor = document.querySelector("div");
+const div = document.createElement("div");
+const boton = document.createElement("button");
+boton.textContent = "Click";
+let guardar = "este mensaje es para guradar en el sesion storage";
+contenedor.appendChild(boton);
+contenedor.appendChild(div);
+boton.addEventListener("click", (e) => {
+    e.preventDefault();
+    sessionStorage.setItem("valor 1",guardar);
+})
+div.textContent = sessionStorage.getItem("valor 1");
+
+    Ejercicio_15
+const contenedor = document.querySelector("div");
+const div = document.createElement("div");
+const boton = document.createElement("button");
+boton.textContent = "Click";
+let guardar = "este mensaje es para guradar en el local storage";
+contenedor.appendChild(boton);
+contenedor.appendChild(div);
+boton.addEventListener("click", (e) => {
+    e.preventDefault();
+    localStorage.setItem("valor 2",guardar);
+    div.textContent = localStorage.getItem("valor 2");
+})
+
+
+    Ejercicio_16
+const contenedor = document.querySelector("div");
+const div = document.createElement("div");
+const boton = document.createElement("button");
+boton.textContent = "Click";
+let guardar = "este mensaje es para guradar en el sesion storage";
+contenedor.appendChild(boton);
+contenedor.appendChild(div);
+boton.addEventListener("click", (e) => {
+    e.preventDefault();
+    sessionStorage.setItem("valor 2",guardar);
+    div.textContent = sessionStorage.getItem("valor 2");
+})
+
+    Ejercicio_17
+const contenedor = document.querySelector("div");
+const div = document.createElement("div");
+const boton = document.createElement("button");
+boton.textContent = "Click";
+let guardar = "este mensaje es para guradar en el local storage";
+contenedor.appendChild(boton);
+contenedor.appendChild(div);
+boton.addEventListener("click", (e) => {
+    e.preventDefault();
+    localStorage.removeItem("valor 2")
+    div.textContent = localStorage.getItem("valor 2");
+})
+
+    Ejercicio_18
+const contenedor = document.querySelector("div");
+const div = document.createElement("div");
+const boton = document.createElement("button");
+boton.textContent = "Click";
+let guardar = "este mensaje es para guradar en el local storage";
+contenedor.appendChild(boton);
+contenedor.appendChild(div);
+boton.addEventListener("click", (e) => {
+    e.preventDefault();
+    sessionStorage.removeItem("valor 2")
+    div.textContent = sessionStorage.getItem("valor 2");
+})
+
+    Ejercicio_19
+const contenedor = document.querySelector("div");
+const ul = document.createElement("ul");
+contenedor.appendChild(ul)
+let array = ["hola", "como estas", "preciosa", "de mierda"]
+sessionStorage.setItem("array",array);
+let arrayTraido = sessionStorage.getItem("array").split(",");
+arrayTraido.forEach((element) => {
+    const li = document.createElement("li");
+    li.textContent = element;
+    ul.appendChild(li);
+})
+
+    Ejercicio_20
+const contenedor = document.querySelector("div");
+const ul = document.createElement("ul");
+contenedor.appendChild(ul)
+let array = ["hola", "como estas", "preciosa", "de mierda", "jajaja"]
+localStorage.setItem("array",array);
+let arrayTraido = localStorage.getItem("array").split(",");
+arrayTraido.forEach((element) => {
+    const li = document.createElement("li");
+    li.textContent = element;
+    ul.appendChild(li);
+})
+
+    Ejercicio_21
+
+
+    Ejercicio_22
+
+
+    Ejercicio_23
+
+
+    Ejercicio_24
+
+
+    Ejercicio_25
+
+
+    Ejercicio_26
+
+
+    Ejercicio_27
+
+
+    Ejercicio_28
+
+
+    Ejercicio_29
+
+
+    Ejercicio_30
+
+Ejercicio 21: Crea un array de números y muéstralo en un div.
+Ejercicio 22: Añade un número al final de un array y muéstralo en un div.
+Ejercicio 23: Elimina el último número de un array y muéstralo en un div.
+Ejercicio 24: Ordena un array de números y muéstralo en un div.
+Ejercicio 25: Recorre un array de strings y muéstralos en una lista.
+Ejercicio 26: Filtra los números pares de un array y muéstralos en un div.
+Ejercicio 27: Suma los elementos de un array de números y muestra el resultado en un div.
+Ejercicio 28: Multiplica los elementos de un array de números y muestra el resultado en un div.
+Ejercicio 29: Usa map para crear un nuevo array duplicando los valores de un array original y muéstralo en un div.
+Ejercicio 30: Usa reduce para calcular la media de un array de números y muestra el resultado en un div.
+
+
+*/
 
 
 
