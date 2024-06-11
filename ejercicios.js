@@ -1914,22 +1914,237 @@ class Tareas {
 }
 
     Ejercicio_22
+let contenedor = document.querySelector("div");
+let documentfragment = document.createDocumentFragment();
+const imagenes = ["./img1.jpg", "./img3.webp", "./img4.jpg  "];
 
+for (i = 0; i < imagenes.length; i++) {
+    let galeria = document.createElement("div");
+    let img = document.createElement("img");
+    img.src = imagenes[i];
+    img.alt = "imagen " + (i + 1);
+    galeria.appendChild(img);
+    documentfragment.appendChild(galeria);
+}
+contenedor.appendChild(documentfragment);
+console.log(documentfragment)
 
     Ejercicio_23
-
+let contenedor = document.querySelector("div")
+const datos = [
+    { nombre: "Juan", edad: 30 },
+    { nombre: "María", edad: 25 },
+    { nombre: "Carlos", edad: 35 },
+];
+const tabla = document.createElement("table");
+const encabezado = document.createElement("tr");
+for (const key in datos[0]) {
+    const th = document.createElement("th");
+    th.textContent = key;
+    encabezado.appendChild(th);
+}
+tabla.appendChild(encabezado);
+datos.forEach((dato) => {
+    const fila = document.createElement("tr");
+    for (const key in dato) {
+        const celda = document.createElement("td");
+        celda.textContent = dato[key];
+        fila.appendChild(celda);
+    }
+    tabla.appendChild(fila);
+});
+contenedor.appendChild(tabla);
 
     Ejercicio_24
-
+const contenedor = document.querySelector("div");
+const form = document.createElement("form");
+const inputNombre = document.createElement("input");
+inputNombre.type = "text";
+inputNombre.placeholder = "Nombre";
+const inputCorreo = document.createElement("input");
+inputCorreo.type = "text";
+inputCorreo.placeholder = "Correo"
+const inputContrasena = document.createElement("input");
+inputContrasena.type = "text";
+inputContrasena.placeholder = "Contrasena";
+const botonEnviar = document.createElement("button");
+botonEnviar.textContent = "Enviar";
+const docFrag = document.createDocumentFragment();
+const divParrafo = document.createElement("div");
+divParrafo.className = "div1"
+form.appendChild(inputNombre);
+form.appendChild(inputCorreo);
+form.appendChild(inputContrasena);
+form.appendChild(botonEnviar);
+docFrag.appendChild(form);
+docFrag.appendChild(divParrafo);
+botonEnviar.addEventListener("click", (e) => {
+    e.preventDefault();
+    const primerP = document.querySelector("p");
+    if (primerP !== null) divParrafo.removeChild(primerP);
+    const mensaje = document.createElement("p");
+    divParrafo.appendChild(mensaje);
+    mensaje.innerHTML = `Bienvenido  <b>${inputNombre.value}<b>`;
+    inputContrasena.value = "";
+    inputCorreo.value = "";
+    inputNombre.value = "";
+})
+contenedor.appendChild(docFrag);
 
     Ejercicio_25
 
-    
+const contenedor = document.querySelector("div");
+const num1 = document.createElement("input");
+num1.type = "text";
+num1.placeholder = "Primer número a operar"
+const num2 = document.createElement("input");
+num2.type = "text";
+num2.placeholder = "Segundo número a operar"
+const botonSuma = document.createElement("button");
+botonSuma.textContent = "Suma";
+const botonResta = document.createElement("button");
+botonResta.textContent = "Resta";
+const botonMultipli = document.createElement("button");
+botonMultipli.textContent = "Multiplicar";
+const botonDividir = document.createElement("button");
+botonDividir.textContent = "Dividir"
+const docFrag = document.createDocumentFragment();
+let resultado;
 
+docFrag.appendChild(num1);
+docFrag.appendChild(num2);
+docFrag.appendChild(botonSuma);
+docFrag.appendChild(botonResta);
+docFrag.appendChild(botonMultipli);
+docFrag.appendChild(botonDividir);
+
+botonSuma.addEventListener("click",(e) => {
+    e.preventDefault();
+    resultado = parseInt(num1.value) + parseInt(num2.value);
+    alert(resultado);
+    num1.value = "";
+    num2.value = "";
+});
+
+botonResta.addEventListener("click", (e) => {
+    e.preventDefault();
+    resultado = parseInt(num1.value) - parseInt(num2.value);
+    alert(resultado);
+    num1.value = "";
+    num2.value = "";
+});
+
+botonMultipli.addEventListener("click", (e) => {
+    e.preventDefault();
+    resultado = parseInt(num1.value) * parseInt(num2.value);
+    alert(resultado);
+    num1.value = "";
+    num2.value = "";
+});
+
+botonDividir.addEventListener("click", (e) => {
+    e.preventDefault();
+    resultado = parseInt(num1.value) / parseInt(num2.value);
+    alert(resultado);
+    num1.value = "";
+    num2.value = "";
+})
+contenedor.appendChild(docFrag);
+
+    Ejercicio_26
+const tabla = document.createElement("table");
+for (let i = 1; i <= 10; i++) {
+    const fila = document.createElement("tr");
+    for (let j = 1; j <= 10; j++) {
+        const celda = document.createElement("td");
+        celda.textContent = i * j;
+        fila.appendChild(celda);
+    }
+    tabla.appendChild(fila);
+}
+document.body.appendChild(tabla);
+
+    Ejercicio_27
+const contenedor = document.querySelector("div");
+const ul = document.createElement("ul");
+const productos = [
+    {nombre: "Shampo", precio: "$ 9800", cantidad: 10},
+    {nombre: "Jabon x3", precio: "$ 6500", cantidad: 7},
+    {nombre: "Gomitas", precio: "$ 100", cantidad: 90},
+];
+productos.forEach( (element) => {
+    const li = document.createElement("li");
+    ul.appendChild(li);
+    contenidoLi = `${element.nombre} - Precio ${element.precio} - Cantidad ${element.cantidad}`;
+    li.textContent = contenidoLi;
+});
+contenedor.appendChild(ul);
+
+    Ejercicio_28
+const contenedor = document.querySelector("div");
+const usuario = {
+    nombre: "Juan",
+    apellido: "Pérez",
+    edad: 30,
+    correo: "juan@example.com",
+};
+const perfil = document.createElement("div");
+perfil.innerHTML = `
+    <h2>Perfil de Usuario</h2>
+    <p><b>Nombre:</b> ${usuario.nombre}</p>
+    <p><b>Apellido:</b> ${usuario.apellido}</p>
+    <p><b>Edad:</b> ${usuario.edad}</p>
+    <p><b>Correo:</b> ${usuario.correo}</p>
+`;
+contenedor.appendChild(perfil);
+
+    Ejercicio_29
+
+
+    Ejercicio_30
+const contenedor = document.querySelector("div");
+const nombre = document.createElement("input");
+nombre.type = "text";
+nombre.placeholder = "Nombre"
+const correo = document.createElement("input");
+correo.type = "text";
+correo.placeholder = "correo"
+const asunto = document.createElement("input");
+asunto.type = "text";
+asunto.placeholder = "asunto";
+const mensaje = document.createElement("input");
+mensaje.type = "text";
+mensaje.placeholder = "mensaje"
+const botonEnviar = document.createElement("button");
+botonEnviar.textContent = "Enviar";
+const docFrag = document.createDocumentFragment();
+const p = document.createElement("p");
+docFrag.appendChild(nombre);
+docFrag.appendChild(correo);
+docFrag.appendChild(asunto);
+docFrag.appendChild(mensaje);
+docFrag.appendChild(botonEnviar);
+botonEnviar.addEventListener("click", (e) => {
+    e.preventDefault();
+    p.innerHTML = `
+        <h2> Resumen de mensaje </h2>
+        <b>Nombre: </b> ${nombre.value} <br>
+        <b>Correo: </b> ${correo.value} <br>
+        <b>Asunto: </b> ${asunto.value} <br>
+        <b>Mensaje: </b> ${mensaje.value} <br>
+    `;
+    console.log(nombre.value);
+    contenedor.appendChild(p);
+    nombre.value = "";
+    correo.value = "";
+    asunto.value = "";
+    mensaje.value = "";
+})
+contenedor.appendChild(docFrag);
+
+
+29 - Galería de Imágenes con Títulos: Crea una galería de imágenes donde cada imagen tenga un título. Usa arrays para almacenar las URLs y los títulos, y genera el HTML dinámicamente.
 */
-
-
-
 
 
 

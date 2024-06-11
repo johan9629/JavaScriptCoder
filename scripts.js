@@ -48,6 +48,8 @@ boton.addEventListener("click", (e) => {
         div3.appendChild(botonCrearObjeto);
     }
 
+});
+
 botonLimpiar.addEventListener("click", (e)=> {
     e.preventDefault();
     array.splice(0,array.length)
