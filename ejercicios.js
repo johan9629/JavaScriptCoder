@@ -503,6 +503,338 @@ if(programaMoneda === 0){
     saludo()
 }
 
+
+    Clase_05
+
+    Ejercicio_1
+const persona = {
+    nombre: "johan",
+    edad: "27",
+    ciudad: "bogota"
+}
+console.log(persona.nombre);
+
+    Ejercicio_2
+persona.telefono = "3112636286";
+console.log(persona.telefono);
+
+    Ejercicio_3
+const coche = {
+    marca: "ford",
+    modelo: "hb",
+    ano: "2018"
+};
+console.log(coche.modelo);
+
+    Ejercicio_4
+coche.color = "negro";
+console.log(coche.color);
+
+    Ejercicio_5
+function Producto (nombre, precio, cantidad){
+    this.nombre = nombre;
+    this.precio = precio;
+    this.cantidad = cantidad;
+}
+const producto1 = new Producto("shampoo", 8000, 10);
+
+    Ejercicio_6
+
+function Persona (nombre, edad, cidudad) {
+    this.nombre = nombre;
+    this.edad = edad;
+    this.ciudad = ciudad;
+}
+const persona1 = new Persona("johan", 2 , "Bogota");
+
+    Ejercicio_7
+function Libro (titulo, autor, ano) {
+    this.titulo = titulo;
+    this.autor = autor;
+    this.ano = ano;
+}
+const libro1 = new Libro("amigo mio", "johan", 1996);
+
+    Ejercicio_8
+function Rectangulo (base, altura) {
+    this.base = base;
+    this.altura = altura;
+    this.calcularArea = function (){
+        console.log("el area es de "+ this.base * this.altura); 
+    }
+}
+const rectangulo1 = new Rectangulo(10,5);
+rectangulo1.calcularArea( );
+
+    Ejercicio_9
+function Circulo (radio) {
+    this.radio = radio;
+    this.calcularPerimetro = function (){
+        let pi = Math.PI;
+        console.log("El perimetro del circulo es de "+ parseFloat(2*pi*this.radio));
+    }
+}
+const circulo1 = new Circulo(10);
+circulo1.calcularPerimetro();
+
+    Ejercicio_10
+function Estudiante(nombre, edad, curso){
+    this.curso = curso;
+    this.edad = edad;
+    this.nombre = nombre;
+    this.presentarse = function(){
+        console.log(`Nombre: ${this.nombre} edad: ${this.edad} curso: ${curso}`);
+    }
+}
+const johan = new Estudiante("johan", 27, "programacion");
+johan.presentarse();
+
+    Ejercicio_11_y_12
+const CuentaBancaria = function(saldo, titular){
+    this.saldo = saldo;
+    this.titular = titular;
+    this.depositar = function(deposito){
+        console.log(`
+        saldo: ${this.saldo}
+        depositado: ${deposito}
+        nuevo saldo: ${this.saldo += deposito}
+        `);
+    }
+    this.retirar = function(retiro) {
+        console.log(`
+        saldo: ${this.saldo}
+        retirado: ${retiro}
+        nuevo saldo: ${this.saldo -= retiro}
+        `);
+    }
+}
+const cuentaBancaria1 = new CuentaBancaria(10000, "johan");
+cuentaBancaria1.depositar(500);
+cuentaBancaria1.retirar(300);
+
+    Ejercicio_13_y_14
+const Agenda = function(){
+    this.contactos = ["alfonso","elena"];
+    this.agregarContacto = function(contacto){
+        this.contactos.push(contacto);
+    }
+    this.buscarContacto = function (nombre) {
+        let busqueda = false;
+        for(let i in this.contactos) {
+            if (this.contactos[i] == nombre){
+                busqueda = true;
+            }
+        }
+        if (busqueda == true) {
+            console.log("se econtro "+ nombre)
+        }else {
+            console.log("No se encontro "+ nombre)
+        }
+    }
+}
+const agenda1 = new Agenda();
+agenda1.agregarContacto("johan");
+agenda1.agregarContacto("michael");
+console.log(agenda1.contactos);
+agenda1.buscarContacto("as");
+agenda1.buscarContacto("johan");
+
+    Ejercicio_15_y_16
+const frutas = {
+    manzana: "roja",
+    naranja: "naranja",
+    pera: "verde"
+}
+console.log("manzana" in frutas);
+for (const propiedad in frutas) {
+    console.log(frutas[propiedad]);
+}
+
+    Ejercicio_17
+class Rectangulo {
+    constructor (base, altura){
+        this.base = base;
+        this.altura = altura;
+    }
+
+    calcularArea(){
+        console.log(this.base*this.altura);
+    }
+}
+const rectangulo1 = new Rectangulo(30,10);
+rectangulo1.calcularArea();
+
+    Ejercicio_18
+class Circulo {
+
+    constructor (radio){
+        this.radio = radio;
+        this.pi = Math.PI;
+    }
+
+    calcularPerimetro(){
+        console.log(this.pi*2*this.radio);
+    }
+}
+const circulo1 = new Circulo(10);
+circulo1.calcularPerimetro();
+
+    Ejercicio_19
+class Empleado {
+    constructor (nombre, edad, cargo){
+        this.nombre = nombre;
+        this.edad = edad;
+        this.cargo = cargo;
+    }
+    promocionar(nuevoCargo){
+        this.cargo = nuevoCargo;
+    }
+}
+const empleado1 = new Empleado("johan", 28, "sub gerente");
+console.log(empleado1.cargo);
+empleado1.promocionar("gerente general");
+console.log(empleado1.cargo);
+
+    Ejercicio_20
+class Producto {
+    constructor (nombre, precio, cantidad) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.cantidad = cantidad;
+    }
+}
+const producto1 = new Producto("shampoo", 5000,22);
+
+    Ejercicio_21
+class Estudiante {
+    constructor (nombre, edad, curso) {
+        this.nombre = nombre;
+        this.edad = edad;
+        this.curso = curso;
+    }
+}
+const Estudiante1 = new Estudiante("johan", 28, "decimo");
+
+    Ejercicio_22
+class Libro {
+    constructor (titulo, autor, ano) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.ano = ano;
+    }
+}
+const libro1 = new Libro("lee bien", "johan gonzalez", 1996);
+
+    Ejercicio_23
+class Agenda {
+    constructor(nombre) {
+        this.nombre = nombre;
+    }
+
+    buscarContacto (nombreBuscar) {
+        if(this.nombre == nombreBuscar) {
+            console.log("el nombre "+ nombreBuscar + " si existe");
+        }else {
+            console.log("el nombre "+ nombreBuscar + " no existe");
+        }
+    }
+}
+const agenda1 = new Agenda ("johan");
+agenda1.buscarContacto("johan");
+
+    Ejercicio_24_y25
+class Vehiculo {
+    constructor(marca, modelo, ano){
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+    }
+    acelerar(){
+        console.log("el vehiculo se esta acelerando")
+    }
+    detalle() {
+        console.log(`
+        La marca es: ${this.marca}
+        El modelo es: ${this.modelo}
+        El año es: ${this.ano}
+        `)
+    }
+}
+const vehiculo1 = new Vehiculo("ford", "fiesta", 2015);
+vehiculo1.detalle();
+vehiculo1.acelerar();
+
+    Ejercicio_26
+class Rectangulo {
+    constructor(base, altura) {
+        this.base = base;
+        this.altura = altura;
+    }
+    calcularPerimetro() {
+        console.log("perimetro " + this.base*this.altura);
+    }
+}
+const rectangulo1 = new Rectangulo(2,43);
+rectangulo1.calcularPerimetro();
+
+    Ejercicio_27_y_28
+class Triangulo {
+    constructor(lado1, lado2, lado3) {
+        this.lado1 = lado1;
+        this.lado2 = lado2;
+        this.lado3 = lado3;
+    }
+    calcularArea() {
+        console.log("Area " + (this.lado1+this.lado2+this.lado3)/2);
+    }
+    calcularPerimetro() {
+        console.log("Perimetro " + (this.lado1+this.lado2+this.lado3))
+    }
+}
+const triangulo1 = new Triangulo(2,43,5);
+triangulo1.calcularArea();
+triangulo1.calcularPerimetro();
+
+    Ejercicio_29_y_30
+const computadora = {
+    marca: "asus",
+    modelo: "vivoBook",
+    procesador: "core 7"
+}
+
+console.log ("procesador" in computadora);
+for (let dato in computadora){
+    console.log(dato +": "+computadora[dato]);
+}
+
+    Ejercicio_31
+class Circulo {
+    constructor(radio){
+        this.radio = radio;
+        this.pi = Math.PI;
+    }
+    calcularArea(){
+        console.log("El area es de: " + this.pi*this.radio*2);
+    }
+}
+const circulo1 = new Circulo(20);
+circulo1.calcularArea();
+
+    Ejercicio_32
+
+class Circulo {
+    constructor (lado) {
+        this.lado = lado;
+    }
+    calcularPerimetro(){
+        console.log("el perimetro es: "+ this.lado*3)
+    }
+}
+
+const circulo1 = new Circulo(20);
+circulo1.calcularPerimetro();
+
+
     Clase_06
 
     Ejercicio_01_y_02
@@ -816,6 +1148,100 @@ vehiculos.push(new pelicula("odio", "gonzalez", 2019))
 vehiculos.push(new pelicula("drama", "perdido", 2020))
 console.log(vehiculos);
 
+    Ejercicio_30
+function triangulo (lado1, lado2, lado3) {
+    this.lado1 = lado1;
+    this.lado2 = lado2;
+    this.lado3 = lado3;
+    this.calcularPerimetro = function() {
+        return lado1+lado2+lado3;
+    }
+}
+const triangulos = [];
+triangulos.push(new triangulo(5,6,7));
+console.log(triangulos[0].calcularPerimetro())
+
+    Ejercicio_31
+function alumno (nombre, nota1, nota2){
+    this.nombre = nombre;
+    this.nota1 = nota1;
+    this.nota2 = nota2;
+    this.calcularPromedio = function() {
+        return (nota1+nota2)/2;
+    }
+}
+const alumnos = [];
+alumnos.push(new alumno ("johan", 5, 4.6));
+alumnos.push(new alumno ("johan", 3, 4.1));
+alumnos.push(new alumno ("johan", 4, 3.6));
+alumnos.push(new alumno ("johan", 4.8, 2.6));
+console.log(alumnos);
+console.log(alumnos[0].calcularPromedio())
+
+    Ejercicio_32
+function mascota(nombre, edad, tipo){
+    this.nombre = nombre;
+    this.edad = edad;
+    this.tipo = tipo;
+    this.esMayorEdad = function() {
+        if(this.edad >= 5){
+            return true;
+        }else {
+            return false;
+        }
+    }
+}
+const mascotas = [];
+mascotas.push(new mascota("goro", 5, "perro"));
+mascotas.push(new mascota("lucian", 2, "perro"));
+mascotas.push(new mascota("miau", 10, "gato"));
+console.log(mascotas[1].esMayorEdad());
+
+    Ejercicio_33_y_34
+function playlist (){
+    this.canciones = [];
+    this.agregarCancion = function(cancion){
+        this.canciones.push(cancion);
+    }
+    this.eliminarCancion = function(titulo){
+        let op = this.canciones.indexOf(titulo);
+        if ( op != -1) {
+            this.canciones.splice(op,1);
+        }
+    }
+}
+const playlists = [];
+const playlist1 = new playlist();
+playlist1.agregarCancion("si me voy que");
+playlist1.agregarCancion("ultimo vaso");
+playlist1.agregarCancion("camino al cielo");
+console.log(playlist1.canciones);
+playlist1.eliminarCancion("ultimo vaso")
+console.log(playlist1.canciones);
+
+    Ejercicio_35    
+function compra (){
+    this.productos = [];
+    this.calcularTotal = function (){
+        for(let a of this.productos){
+            let result =+ a.precio;
+            return result;
+        }
+    }
+}
+const compras = [];
+const compra1 = new compra();
+compra1.productos.push(
+    {producto: "shampo", precio: 50},
+    {producto: "papas", precio: 70},
+    {producto: "carne", precio: 100});
+compras.push(compra1);
+console.log(compras[0].calcularTotal());
+console.log(compras)
+console.log(compra1);
+
+
+
     Ejercicio_38
 class Cuadrado {
     constructor (lado){
@@ -882,9 +1308,6 @@ class TiendaOnline {
                 this.enviarCorreo(nomCliente);
             }        
         }
-        
-            
-        
     }
     enviarCorreo(nomCliente){
         let correo = this.clientes.find(p => p.nombre == nomCliente);
@@ -1050,6 +1473,217 @@ console.log(e)
     Ejercicio_21 
 console.log([1,2,3,4,5,6,7,8,9,10].reduce((acumulador, actual) => acumulador + actual,0));
 
+
+    Clase_08
+
+    Ejercicio_01_y_02_y_03_y_04_y_05
+const numeros = [1, 2, 3, 4, 5];
+numeros.push(6);
+numeros.forEach(element => console.log(element));
+numeros.pop();
+numeros.unshift(0);
+numeros.shift();
+console.log(numeros);
+
+    Ejercicio_06_y_07_y_08_y_09_y_10
+const numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let e = numeros.map(element => element * 2);
+console.log(e);
+let a = numeros.filter(element => element % 2 === 0 );
+console.log(a);
+let i = numeros.find(element => element > 3);
+console.log(i);
+let o = numeros.some(element => element >4);
+console.log(o);
+let u = numeros.reduce((contador, actual) => contador * actual, 1);
+console.log(u); 
+
+    Ejercicio_11_y_12
+function operaciones (op) {
+    if(op == "sumar") {
+        return (a ,b) => a + b; 
+    }else if(op == "restar") {
+        return (a, b) => a - b;
+    }
+}
+let suma = operaciones("sumar");
+let resta = operaciones("restar");
+console.log(suma(4,8));
+console.log(resta(14,8));
+
+    Ejercicio_13_y_14_y_15
+const numeros = [1, 5, 3, 8, 6, 10];
+let a = numeros.indexOf(3);
+console.log(a);
+let e = numeros.includes(4);
+console.log(e);
+let i = numeros.sort((a, b)=> a - b);
+console.log(i);
+
+    Ejercicios_16
+console.log(Math.floor(Math.random() * 100));
+
+    Ejercicio_17
+console.log(Math.round(4.7));
+
+    Ejercicio_18
+console.log(Math.max(1,2,3,4,5));
+
+    Ejercicio_19
+console.log(Math.min(1,2,3,4,5));
+
+    Ejercicio_20
+console.log(Math.sqrt(16));
+
+    Ejercicio_21
+let fechaActual = Date();
+console.log(fechaActual);
+
+    Ejercicio_22
+let fechaActual = new Date().getFullYear();
+console.log(fechaActual);
+
+    Ejercicio_23
+let fechaActual = new Date().getMonth();
+console.log(fechaActual);
+
+
+    Ejercicio_24
+let fechaActual = new Date().getDate();
+console.log(fechaActual);
+
+    Ejercicio_25
+let fechaActual = new Date().getDay();
+console.log(fechaActual);
+
+    Ejercicio_26
+
+let fechas = [new Date(2022, 10, 1), new Date("December 17, 2023"), new Date (2021, 11,25), new Date(2020, 1, 25)]
+fechas.sort((a, b) => a - b );
+
+    Ejercicio_27
+let valores = (array, numero) => {
+    let nuevoArray = array.filter((el) => el > numero);
+    console.log(nuevoArray);
+}
+let lista  =  [10,5,3,6,2,11,8,9]
+valores(lista,9);
+
+    Ejercicio_28
+let valores = (array) => {
+    let nuevoArray = array.reduce((almacena, actual) => (almacena + actual),0) / array.length;
+    console.log(nuevoArray);
+}
+let lista  =  [10,5,3,6,2,11,8,9]
+valores(lista);
+
+    Ejercicio_29
+const agregarDiasFecha = (fecha, dias) => {
+    const nuevaFecha = new Date(fecha);
+    nuevaFecha.setDate(nuevaFecha.getDate() + dias);
+    return nuevaFecha.toLocaleDateString();
+}
+console.log(agregarDiasFecha(new Date("2019-1-5"),5));
+
+    Ejercicio_30
+const duplicados = (array)=> array.filter((numero, index) => array.indexOf(numero) !== index);
+let lista = [10, 5, 8, 3, 10, 5];
+console.log(duplicados(lista));
+
+    Ejercicio_31
+const convertirFecha = (fechas) => {
+    return fechas.map((e) => e.toLocaleDateString());
+}
+const  array = [new Date(), new Date(2020,10,19), new Date(1996,11,29), new Date(2019,0,10), new Date(2022,10,5)]
+console.log(convertirFecha(array));
+
+    Ejercicio_32
+const edad = (nacimiento) => {
+    const hoy = new Date();
+    let edad = hoy.getFullYear() - nacimiento.getFullYear();
+    const mes = hoy.getMonth() - nacimiento.getMonth();
+    if (mes < 0 || mes === 0  && hoy.getDate() - nacimiento.getDate()) {
+        edad--;
+    }
+    return edad
+};
+console.log(edad(new Date(1996,11,29)));
+
+    Ejercicio_33
+const sumaArray = (array) => {
+    return array.reduce((contador, actual) => contador + actual.reduce((contador1, actual1) => contador1 + actual1,0), 0);
+}
+const numeros = [[5,4],[3,2]];
+console.log(sumaArray(numeros));
+
+    Ejercicio_34
+const mayorMenor = (array) => {
+    let a = array.reduce((contador, actual) => contador > actual ? contador : actual);
+    let b = array.reduce((contador, actual) => contador < actual ? contador: actual);
+    return  { mayor: a, menor: b}
+}
+console.log(mayorMenor([5,7,2,10,4,3,6,7]));
+
+    Ejercicio_35
+const buscarPares = (array) => {
+    let contador = 0;
+    array.forEach(element => {
+        if (element % 2 == 0) {
+            contador++;
+        }
+    });
+    return contador;
+}
+const numeros = [10,3,5,2,19,43,2,8,6];
+console.log (buscarPares(numeros));
+
+    Ejercicio_36
+const calcularDesviacionEstandar = array => {
+const media = array.reduce((sum, num) => sum + num, 0) / array.length;
+const varianza = array.reduce((sum, num) => sum + Math.pow(num - media, 2), 0) / array.length;
+return Math.sqrt(varianza);
+};
+
+console.log(calcularDesviacionEstandar([1, 2, 3, 4, 5]));
+
+    Ejercicio_37
+const ordenarArray = (array) => {
+    console.log(array.sort());
+}
+ordenarArray(["primero","segundo","tercero", "cuarto"]);
+
+    Ejercicio_38
+const paresImpares = (array) => {
+    const pares = array.filter((e) => e % 2 == 0);
+    const impares = array.filter((element) => element % 2 !== 0)
+    return {pares, impares}
+}
+console.log(paresImpares([1,2,3,4,5,6,7,8,9,10]));
+
+const agruparPorParidad = numeros => numeros.reduce((obj, num) => {
+    obj[num % 2 === 0 ? 'pares' : 'impares'].push(num);
+    return obj;
+}, { pares: [], impares: [] });
+console.log(agruparPorParidad([1, 2, 3, 4, 5, 6]));
+
+    Ejercicio_39
+const eliminarDuplicados = (array)=> {
+    return array.filter((numero, index) => !(array.indexOf(numero) !== index))
+}
+let lista = [10, 5, 8, 3, 10, 5];
+console.log(eliminarDuplicados(lista));
+
+const eliminarDuplicados = array => [...new Set(array)];
+console.log(eliminarDuplicados([1, 2, 2, 3, 3, 4, 5, 5]));
+
+    Ejercicio_40
+const fechaReciente = (array) => {
+    const a = array.reduce((contador,actual) => {
+        return contador > actual ? contador : actual
+    });
+    console.log(a)
+}
+fechaReciente([new Date(2020,1,28), new Date(1996,10,20), new Date(2024,8,21)])
 
 
     Clase 09
@@ -1280,1022 +1914,236 @@ class Tareas {
 }
 
     Ejercicio_22
+let contenedor = document.querySelector("div");
+let documentfragment = document.createDocumentFragment();
+const imagenes = ["./img1.jpg", "./img3.webp", "./img4.jpg  "];
 
+for (i = 0; i < imagenes.length; i++) {
+    let galeria = document.createElement("div");
+    let img = document.createElement("img");
+    img.src = imagenes[i];
+    img.alt = "imagen " + (i + 1);
+    galeria.appendChild(img);
+    documentfragment.appendChild(galeria);
+}
+contenedor.appendChild(documentfragment);
+console.log(documentfragment)
 
     Ejercicio_23
-
+let contenedor = document.querySelector("div")
+const datos = [
+    { nombre: "Juan", edad: 30 },
+    { nombre: "María", edad: 25 },
+    { nombre: "Carlos", edad: 35 },
+];
+const tabla = document.createElement("table");
+const encabezado = document.createElement("tr");
+for (const key in datos[0]) {
+    const th = document.createElement("th");
+    th.textContent = key;
+    encabezado.appendChild(th);
+}
+tabla.appendChild(encabezado);
+datos.forEach((dato) => {
+    const fila = document.createElement("tr");
+    for (const key in dato) {
+        const celda = document.createElement("td");
+        celda.textContent = dato[key];
+        fila.appendChild(celda);
+    }
+    tabla.appendChild(fila);
+});
+contenedor.appendChild(tabla);
 
     Ejercicio_24
-
+const contenedor = document.querySelector("div");
+const form = document.createElement("form");
+const inputNombre = document.createElement("input");
+inputNombre.type = "text";
+inputNombre.placeholder = "Nombre";
+const inputCorreo = document.createElement("input");
+inputCorreo.type = "text";
+inputCorreo.placeholder = "Correo"
+const inputContrasena = document.createElement("input");
+inputContrasena.type = "text";
+inputContrasena.placeholder = "Contrasena";
+const botonEnviar = document.createElement("button");
+botonEnviar.textContent = "Enviar";
+const docFrag = document.createDocumentFragment();
+const divParrafo = document.createElement("div");
+divParrafo.className = "div1"
+form.appendChild(inputNombre);
+form.appendChild(inputCorreo);
+form.appendChild(inputContrasena);
+form.appendChild(botonEnviar);
+docFrag.appendChild(form);
+docFrag.appendChild(divParrafo);
+botonEnviar.addEventListener("click", (e) => {
+    e.preventDefault();
+    const primerP = document.querySelector("p");
+    if (primerP !== null) divParrafo.removeChild(primerP);
+    const mensaje = document.createElement("p");
+    divParrafo.appendChild(mensaje);
+    mensaje.innerHTML = `Bienvenido  <b>${inputNombre.value}<b>`;
+    inputContrasena.value = "";
+    inputCorreo.value = "";
+    inputNombre.value = "";
+})
+contenedor.appendChild(docFrag);
 
     Ejercicio_25
 
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+const contenedor = document.querySelector("div");
+const num1 = document.createElement("input");
+num1.type = "text";
+num1.placeholder = "Primer número a operar"
+const num2 = document.createElement("input");
+num2.type = "text";
+num2.placeholder = "Segundo número a operar"
+const botonSuma = document.createElement("button");
+botonSuma.textContent = "Suma";
+const botonResta = document.createElement("button");
+botonResta.textContent = "Resta";
+const botonMultipli = document.createElement("button");
+botonMultipli.textContent = "Multiplicar";
+const botonDividir = document.createElement("button");
+botonDividir.textContent = "Dividir"
+const docFrag = document.createDocumentFragment();
+let resultado;
+
+docFrag.appendChild(num1);
+docFrag.appendChild(num2);
+docFrag.appendChild(botonSuma);
+docFrag.appendChild(botonResta);
+docFrag.appendChild(botonMultipli);
+docFrag.appendChild(botonDividir);
+
+botonSuma.addEventListener("click",(e) => {
+    e.preventDefault();
+    resultado = parseInt(num1.value) + parseInt(num2.value);
+    alert(resultado);
+    num1.value = "";
+    num2.value = "";
+});
+
+botonResta.addEventListener("click", (e) => {
+    e.preventDefault();
+    resultado = parseInt(num1.value) - parseInt(num2.value);
+    alert(resultado);
+    num1.value = "";
+    num2.value = "";
+});
+
+botonMultipli.addEventListener("click", (e) => {
+    e.preventDefault();
+    resultado = parseInt(num1.value) * parseInt(num2.value);
+    alert(resultado);
+    num1.value = "";
+    num2.value = "";
+});
+
+botonDividir.addEventListener("click", (e) => {
+    e.preventDefault();
+    resultado = parseInt(num1.value) / parseInt(num2.value);
+    alert(resultado);
+    num1.value = "";
+    num2.value = "";
+})
+contenedor.appendChild(docFrag);
+
+    Ejercicio_26
+const tabla = document.createElement("table");
+for (let i = 1; i <= 10; i++) {
+    const fila = document.createElement("tr");
+    for (let j = 1; j <= 10; j++) {
+        const celda = document.createElement("td");
+        celda.textContent = i * j;
+        fila.appendChild(celda);
+    }
+    tabla.appendChild(fila);
+}
+document.body.appendChild(tabla);
+
+    Ejercicio_27
+const contenedor = document.querySelector("div");
+const ul = document.createElement("ul");
+const productos = [
+    {nombre: "Shampo", precio: "$ 9800", cantidad: 10},
+    {nombre: "Jabon x3", precio: "$ 6500", cantidad: 7},
+    {nombre: "Gomitas", precio: "$ 100", cantidad: 90},
+];
+productos.forEach( (element) => {
+    const li = document.createElement("li");
+    ul.appendChild(li);
+    contenidoLi = `${element.nombre} - Precio ${element.precio} - Cantidad ${element.cantidad}`;
+    li.textContent = contenidoLi;
+});
+contenedor.appendChild(ul);
+
+    Ejercicio_28
+const contenedor = document.querySelector("div");
+const usuario = {
+    nombre: "Juan",
+    apellido: "Pérez",
+    edad: 30,
+    correo: "juan@example.com",
+};
+const perfil = document.createElement("div");
+perfil.innerHTML = `
+    <h2>Perfil de Usuario</h2>
+    <p><b>Nombre:</b> ${usuario.nombre}</p>
+    <p><b>Apellido:</b> ${usuario.apellido}</p>
+    <p><b>Edad:</b> ${usuario.edad}</p>
+    <p><b>Correo:</b> ${usuario.correo}</p>
+`;
+contenedor.appendChild(perfil);
+
+    Ejercicio_29
+
+
+    Ejercicio_30
+const contenedor = document.querySelector("div");
+const nombre = document.createElement("input");
+nombre.type = "text";
+nombre.placeholder = "Nombre"
+const correo = document.createElement("input");
+correo.type = "text";
+correo.placeholder = "correo"
+const asunto = document.createElement("input");
+asunto.type = "text";
+asunto.placeholder = "asunto";
+const mensaje = document.createElement("input");
+mensaje.type = "text";
+mensaje.placeholder = "mensaje"
+const botonEnviar = document.createElement("button");
+botonEnviar.textContent = "Enviar";
+const docFrag = document.createDocumentFragment();
+const p = document.createElement("p");
+docFrag.appendChild(nombre);
+docFrag.appendChild(correo);
+docFrag.appendChild(asunto);
+docFrag.appendChild(mensaje);
+docFrag.appendChild(botonEnviar);
+botonEnviar.addEventListener("click", (e) => {
+    e.preventDefault();
+    p.innerHTML = `
+        <h2> Resumen de mensaje </h2>
+        <b>Nombre: </b> ${nombre.value} <br>
+        <b>Correo: </b> ${correo.value} <br>
+        <b>Asunto: </b> ${asunto.value} <br>
+        <b>Mensaje: </b> ${mensaje.value} <br>
+    `;
+    console.log(nombre.value);
+    contenedor.appendChild(p);
+    nombre.value = "";
+    correo.value = "";
+    asunto.value = "";
+    mensaje.value = "";
+})
+contenedor.appendChild(docFrag);
+
+
+29 - Galería de Imágenes con Títulos: Crea una galería de imágenes donde cada imagen tenga un título. Usa arrays para almacenar las URLs y los títulos, y genera el HTML dinámicamente.
 
     Clase_11
 

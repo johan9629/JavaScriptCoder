@@ -47,8 +47,8 @@ boton.addEventListener("click", (e) => {
         contenedor.appendChild(div3);
         div3.appendChild(botonCrearObjeto);
     }
-    
-})
+
+});
 
 botonLimpiar.addEventListener("click", (e)=> {
     e.preventDefault();
