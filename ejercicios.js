@@ -2425,48 +2425,630 @@ arrayTraido.forEach((element) => {
 })
 
     Ejercicio_21
-
+const contenedor = document.querySelector("div");
+const array = [1,2,3,4,5,6,7];
+contenedor.textContent = array;
 
     Ejercicio_22
-
+const contenedor = document.querySelector("div");
+const array = [1,2,3,4,5,6,7];
+array.push(10);
+contenedor.textContent = array;
 
     Ejercicio_23
-
+const contenedor = document.querySelector("div");
+const array = [1,2,3,4,5,6,7];
+array.pop();
+contenedor.textContent = array;
 
     Ejercicio_24
-
+const contenedor = document.querySelector("div");
+const array = [1,2,3,9,15,23,90,4,5,6,7];
+array.sort((a,b) => a-b);
+contenedor.textContent = array;
 
     Ejercicio_25
-
+const contenedor = document.querySelector("div");
+const ul = document.createElement("ul");
+contenedor.appendChild(ul);
+const array = ["hola", "pendejo", "de mierda"];
+array.forEach(element => {
+    const li = document.createElement("li");
+    ul.appendChild(li);
+    li.textContent = element;
+});
 
     Ejercicio_26
-
+const contenedor = document.querySelector("div");
+const array = [1,2,3,4,5,6,7,8,9];
+let a = array.filter((element) => element % 2 == 0);
+contenedor.textContent = a;
 
     Ejercicio_27
-
+const contenedor = document.querySelector("div");
+const array = [1,3,6,4,2,8];
+const a = array.reduce((contador, actual) => contador + actual, 0);
+contenedor.textContent = a;
 
     Ejercicio_28
-
+const contenedor = document.querySelector("div");
+const array = [1,3,6,4,2,8];
+const a = array.reduce((contador, actual) => contador * actual, 1);
+contenedor.textContent = a;
 
     Ejercicio_29
-
+const contenedor = document.querySelector("div");
+const array = [1,3,6,4,2,8];
+const a = array.map((element) => element * 2 )
+contenedor.textContent = a;
 
     Ejercicio_30
+const contenedor = document.querySelector("div");
+const array = [1,3,6,4,2,8];
+const a = array.reduce((contador, actual ) => contador + actual, 0 )/array.length;
+contenedor.textContent = a;
 
-Ejercicio 21: Crea un array de números y muéstralo en un div.
-Ejercicio 22: Añade un número al final de un array y muéstralo en un div.
-Ejercicio 23: Elimina el último número de un array y muéstralo en un div.
-Ejercicio 24: Ordena un array de números y muéstralo en un div.
-Ejercicio 25: Recorre un array de strings y muéstralos en una lista.
-Ejercicio 26: Filtra los números pares de un array y muéstralos en un div.
-Ejercicio 27: Suma los elementos de un array de números y muestra el resultado en un div.
-Ejercicio 28: Multiplica los elementos de un array de números y muestra el resultado en un div.
-Ejercicio 29: Usa map para crear un nuevo array duplicando los valores de un array original y muéstralo en un div.
-Ejercicio 30: Usa reduce para calcular la media de un array de números y muestra el resultado en un div.
+    Ejercicio_31
+const contenedor = document.querySelector("div");
+const estudiantes = {
+    nombre: "johan gonzalez",
+    edad: 25,
+    curso: 11
+}
+contenedor.innerHTML = ` Nombre: ${estudiantes.nombre} <br> Edad:${estudiantes.edad} <br> Curso: ${estudiantes.curso}`
+
+    Ejercicio_32
+const contenedor = document.querySelector("div");
+const estudiantes = {
+    nombre: "johan gonzalez",
+    edad: 25,
+    curso: 11
+}
+estudiantes.hola = "como estas"
+contenedor.innerHTML = ` Nombre: ${estudiantes.nombre} <br> Edad:${estudiantes.edad} <br> Curso: ${estudiantes.curso} <br> Nuevo: ${estudiantes.hola}`
+
+    Ejercicio_33
+const contenedor = document.querySelector("div");
+const estudiantes = {
+    nombre: "johan gonzalez",
+    edad: 25,
+    curso: 11
+}
+estudiantes.hola = "como estas"
+contenedor.innerHTML = ` Nombre: ${estudiantes.nombre} <br> Edad:${estudiantes.edad} <br> Curso: ${estudiantes.curso} <br> Nuevo: ${estudiantes.hola}`
+delete estudiantes.curso;
+
+    Ejercicio_34
+const contenedor = document.querySelector("div");
+const ul = document.createElement("ul");
+contenedor.appendChild(ul);
+const estudiantes = {
+    nombre: "johan gonzalez",
+    edad: 25,
+    curso: 11
+}
+
+for( element in estudiantes) {
+    let li  =  document.createElement("li");
+    ul.appendChild(li);
+    li.textContent = `${element}: ${estudiantes[element ]}`
+}
+
+    Ejercicio_35
+
+
+    Ejercicio_36
+const contenedor = document.querySelector("div");
+const ul = document.createElement("ul");
+contenedor.appendChild(ul);
+const estudiantes = [
+    {nombre: "johan gonzalez", edad: 27, curso: 11 },
+    {nombre: "alfonso gonzalez", edad: 55, curso: 11 },
+    {nombre: "Santiago Gonzalez", edad: 5, curso: 11 },
+    {nombre: "Elena Gil", edad: 60, curso: 11 },
+    {nombre: "Sebastian gonzalez", edad: 2, curso: 11 },
+]
+estudiantes.filter(element => {
+    if (element.edad > 18) {
+        const li = document.createElement("li");
+        ul.appendChild(li);
+        li.textContent = `Nombre: ${element.nombre}  Edad: ${element.edad}`;
+    }
+})  
+
+    Ejercicio_37
+const contenedor = document.querySelector("div");
+const ul = document.createElement("ul");
+contenedor.appendChild(ul);
+const estudiantes = [
+    {nombre: "johan gonzalez", edad: 27, curso: 11 },
+    {nombre: "alfonso gonzalez", edad: 55, curso: 11 },
+    {nombre: "Santiago Gonzalez", edad: 5, curso: 11 },
+    {nombre: "Elena Gil", edad: 60, curso: 11 },
+    {nombre: "Sebastian gonzalez", edad: 2, curso: 11 },
+]
+estudiantes.map(element => {
+        const li = document.createElement("li");
+        ul.appendChild(li);
+        li.textContent = `Nombre: ${element.nombre}`
+})  
+
+    Ejercicio_38
+const objeto = {nombre: "johan gonzalez", edad: 27, curso: 11 }
+let a = JSON.stringify(objeto);
+localStorage.setItem("alumno", a);
+
+    Ejercicio_39
+onst a = localStorage.getItem("alumno");
+const b = JSON.parse(a);
+const contenedor = document.querySelector("div");
+contenedor.textContent = b
+
+    Ejercicio_40
+const contenedor = document.querySelector("div");
+const ul = document.createElement("ul");
+contenedor.appendChild(ul);
+const estudiantes = [
+    {nombre: "johan gonzalez", edad: 27, curso: 11 },
+    {nombre: "alfonso gonzalez", edad: 55, curso: 11 },
+    {nombre: "Santiago Gonzalez", edad: 5, curso: 11 },
+    {nombre: "Elena Gil", edad: 60, curso: 11 },
+    {nombre: "Sebastian gonzalez", edad: 2, curso: 11 },
+];
+const a = JSON.stringify(estudiantes);
+sessionStorage.setItem("estudiantes", a);
+const b = JSON.parse(sessionStorage.getItem("estudiantes"));
+b.forEach(element => {
+    const li = document.createElement("li");
+    ul.appendChild(li);
+    li.innerHTML = `Nombre: ${element.nombre} Edad: ${element.edad} Curso: ${element.curso}`;
+});
+
+    Clase_12
+
+    Ejercicio_01
+const x = 11;
+resultado = x > 10 ? "si" : "no";
+console.log(resultado);
+
+    Ejercicio_02
+const mensaje = "mayor de edad";
+const edad = 19
+resultado = edad >= 18 ? mensaje : "menor de edad ";
+console.log(resultado);
+
+    Ejercicio_03
+const persona = {nombre:"johan gonzalez", edad: 28};
+let disponibilidad = persona.nombre ? "nombre disponible": "nombre no disponible"
+console.log(disponibilidad)
+
+    Ejercicio_04
+const nota = 5;
+let disponibilidad = nota > 6 ? "aprobo": "reprobado"
+console.log(disponibilidad)
+
+    Ejercicio_05
+const estado = "activo";
+let disponibilidad = estado === "activo" ? "activo": "inactivo"
+console.log(disponibilidad)
+
+    Ejercicio_06
+const a = "activo";
+const b = "Activo"
+let disponibilidad =  a == b && "es correcto"
+console.log(disponibilidad)
+
+    Ejercicio_07
+let a = undefined;
+let disponibilidad =  a || "error" && (a = "variable asignada");
+console.log(disponibilidad)
+
+    Ejercicio_08
+let correo = "";
+let contras = "sdf";
+let vacios =  (correo == "" || contras == "") && "los campos correo o contraseña no pueden ser vacios";
+console.log(vacios)
+
+    Ejercicio_09
+function logIn (){
+    console.log("abcd")
+}
+let use  = null;
+use !== null && logIn();
+
+    Ejercicio_10
+const personas = null;
+console.log(personas?.nombre)
+
+    Ejercicio_11
+const personas = "asfasf";
+console.log(personas || "este es error");
+
+    Ejercicio_12
+
+
+    Ejercicio_13
+const connection = "with connectin";
+console.log(connection || "without connection");
+
+    Ejercicio_14
+const connection = null;
+console.log(connection || "without connection");
+
+    Ejercicio_15
+const connection = null;
+console.log(connection?.on || "without connection");
+
+    Ejercicio_16
+const connection = 0;
+console.log(connection ?? "without connection");
+
+    Ejercicio_17
+const connection = null;
+console.log(connection ?? "without connection");
+
+    Ejercicio_18
+let connection = 0;
+connection ?? (connection = "without connection");
+console.log(connection);
+
+    Ejercicio_19
+let connection = null;
+connection ?? (connection = "sin datos");
+console.log(connection);
+
+    Ejercicio_20
+let connection = null;
+connection ?? (connection = "sin datos");
+console.log(connection);
+
+    Ejercico_21
+let connection = null;
+console.log(connection?.on ?? "no existe");
+
+    Ejercicio_22
+function User () {
+    this.getDetails = function() {
+        console.log("hola");
+    }
+}
+const user1 = new User();
+console.log(user1?.getDetails ?? "no existe");
+
+    Ejercicio_23
+const user = {
+    direccion: {
+        ciudad: "bgota"
+        
+    }
+}
+console.log(user?.direccion?.ciudad ?? "es nulo");
+
+    Ejercicio_24
+const cliente = {
+    email: "johan@213.com"
+}
+let estadoEmail;
+cliente?.email ? estadoEmail = "email disponible" : estadoEmail = "email no disponible";
+console.log(estadoEmail);
+
+    Ejercicio_25
+const array = [5];
+console.log(array?.[0] ?? "no existe") 
+
+    Ejercicio_26
+const persona = {
+    nombre: "johan",
+    edad: 28,
+    RH: "o+"
+}
+const {nombre, edad, RH} = persona
+console.log(nombre+edad)
+
+    Ejercicio_27
+const auto = {
+    marca: "ford",
+    modelo: 1996
+};
+const {marca, modelo} = auto;
+let cardBrand = marca;
+let carModel = modelo;
+console.log(cardBrand+carModel)
+
+    Ejercicio_28
+let usuario = {
+    pais: "colombia",
+};
+let {pais} = usuario;
+pais = "Desconocido"
+console.log(pais)
+
+    Ejercicio_29
+let cliente = {
+    direccion: {
+        ciudad: "bogota",
+    }
+}
+let {direccion: {ciudad}} = cliente;
+console.log(ciudad)
+
+    Ejercicio_30
+let persona = {
+    nombre: "johan",
+    direccion: {
+        ciudad: "bogota"
+    }
+}
+let {nombre} = persona;
+console.log(nombre)
+
+    Ejercicio_31
+const persona = {
+    nombre: "johan",
+    edad: 28,
+    RH: "O+"
+}
+function mostrarInfo(item) {
+    const {nombre, edad} = item;
+    console.log(nombre,edad);
+}
+mostrarInfo(persona);
+
+    Ejercicio_32
+const persona = {
+    nombre: "johan",
+    edad: 28,
+    RH: "O+"
+}
+function saludar({nombre,edad}) {
+    console.log(nombre = "Invidtado");
+}
+saludar(persona);
+
+    Ejercicio_33
+const persona = {
+    nombre: "johan",
+    edad: 28,
+    RH: "O+",
+    direccion: {
+        ciudad: "bogota"
+    }
+}
+function obtenerCiudad(item) {
+    let {nombre, edad, RH, direccion: {ciudad} } = item
+    console.log(ciudad, nombre);
+}
+obtenerCiudad(persona);
+
+    Ejercicio_34
+const persona = {
+    id: 1,
+    nombre: "a",
+    prb: 45
+}
+function procesarDatos(item) {
+    let {id,...resto} = item
+    console.log(id, resto);
+}
+procesarDatos(persona);
+
+    Ejercicio_35
+const prodcutos = {
+    id: 1,
+    nombre: "shampoo",
+    precio: 1000
+}
+function mostrarProducto({nombre: productName, precio: productPrice}) {
+    console.log(productName, productPrice);
+}
+mostrarProducto(prodcutos);
+
+    Ejercicio_36
+const array = [1,2,3,4,5,6,7,8,9];
+const [a,b] = array;
+console.log(a,b)
+
+    Ejercicio_37
+let colores = ["rojo","verde","azul","morado","violeta"];
+let [a,b] = colores;
+console.log(a,b = "n/a")
+
+    Ejercicio_38
+let frutas = ["manzana","pera","lulo","sapote","mora"];
+let [a,,c] = frutas;
+console.log(a,c)
+
+    Ejercicio_39
+let nombres = ["johan","santiago","sebastian","nicolas","joan"];
+let [a,...resto] = nombres;
+console.log(a)
+
+    Ejercicio_40
+let array = [[1, 2], [3, 4], [5, 6]];
+let [a,[b,c],d] = array;
+console.log(a,b,c);
+
+
+    Clase_13
+
+    Ejercicio_01
+const array1 = [1,2,3,4];
+const array2 = [5,6,7,8,9];
+const union = [...array1, ...array2];
+console.log(union)
+
+    Ejercicio_02
+const array1 = [1,2,3,4];
+const array2 = [...array1]
+console.log(array2);
+
+    Ejercicio_03
+const array1 = [1,2,3,4];
+const array2 = [7,9,10,11];
+array1.push(...array2)
+console.log(array1);
+
+    Ejercicio_04
+
+
+    Ejercicio_05
+const array1 = [1,2,3,4];
+let arrayMap = array1.map((element) => element * 2)
+console.log(...arrayMap)
+
+    Ejercicio_06
+const persona = {
+    nombre: "johan",
+    edad: 28
+};
+const persona1 = {
+    email: "johan9629@gamilcom",
+    telefono: 3112636286
+};
+const personaFinal = {
+    ...persona,
+    ...persona1
+};
+console.log(personaFinal);
+
+    Ejercicio_07
+const persona = {
+    nombre: "johan",
+    edad: 28,
+    email: "johan9629@gamilcom",
+    telefono: 3112636286
+};
+const persona1 = {...persona};
+console.log(persona1);
+
+    Ejercicio_08
+const persona = {
+    nombre: "johan",
+    edad: 28,
+    email: "johan9629@gamilcom",
+    telefono: 3112636286
+};
+const persona1 = {
+    ...persona,
+    sexo: "masculino"
+};
+console.log(persona1);
+
+    Ejercicio_09
+const persona = {
+    nombre: "johan",
+    edad: 28,
+    email: "johan9629@gamilcom",
+    telefono: 3112636286
+};
+const persona1 = {
+    ...persona,
+    sexo: "masculino"
+};
+console.log(persona1.nombre  = "michael");
+console.log(persona1);
+
+    Ejercicio_10
+const persona = {
+    nombre: "johan",
+    edad: 28,
+    email: "johan9629@gamilcom",
+    telefono: 3112636286
+};
+function traerPersona (item) {
+    const a = {...item}
+    console.log(a)
+}
+traerPersona(persona);
+
+    Ejercicio_11
+let array1 = [1,2,3,4,5];
+let array2 = [6,7,8,9,10];
+let array3 = [11,12,13]
+let array = [...array1,...array2];
+array.push(...array3)
+console.log(array);
+
+    Ejercicio_12
+let array1 = [1,2,3,4,5,6,7];
+let array2 = [6,7,1,2,10,11];
+let array = [...array1,...array2];
+let array3 = [...new Set(array)];
+
+console.log(array3);
+
+    Ejercicio_13
+let array1 = [1,2,3,4,5,6,7];
+let [a,b,c,...as] = array1;
+console.log([a,b,...as]);
+
+    Ejercicio_14
+let persona1 = {
+    nombre: "johan"
+}
+let persona2 = { 
+    apellido: "gonzalez"
+}
+let persona3 = {
+    edad: 28
+}
+
+let persona = {
+    ...persona1,
+    ...persona2,
+    ...persona3
+}
+console.log(persona)
+
+    Ejercicio_15
+let array1 = [0,1,2,3,4,5];
+let array2 = [...array1];
+console.log(array2.filter(element => element %2 ==0));
+
+    Ejercicio_16
+function multiplesParametros (...abc) {
+    let array = abc;
+    enviarArray(...array);
+}
+function enviarArray(...a) {
+    console.log(a);
+}
+multiplesParametros(10,5,80,6,2,4,5);
+
+    Ejercicio_17
+
+const obj1 = {
+    nombre: "johan ",
+    edad: 28
+}
+let numerosCelular = [311263286, 3208277900];
+const obj2 = {
+    ...obj1,
+    ...numerosCelular
+}
+
+    Ejercicio_18
+const obj1 = {
+    nombre: "johan ",
+    edad: 28
+}
+let numerosCelular = [311263286, 3208277900];
+function obj2 (n1,n2) {
+    const obj3 = {
+        ...n1,
+        ...n2
+    }
+    console.log(obj3)
+
+}
+
+    Ejercicio_19
+
+
+    Ejercicio_20 
 
 
 */
-
 
 
 

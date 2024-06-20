@@ -1,19 +1,12 @@
-let nombre;
-function nuevaTarea (){
-    nombre = prompt("por favor ingresa tu nombre").toUpperCase();
-    alert(`Se a creado tu perfil para agregar tareas: ${nombre}`);
-}
-
-nuevaTarea();
-
+let id = 1;
 const contenedor = document.querySelector("div");
 const div = document.createElement("div");
 const formulario = document.createElement("form");
 const input = document.createElement("input");
 input.type = "text"
-input.placeholder = `Ingrese tarea ${nombre}`;
+input.placeholder = `Ingrese tarea`;
 const boton = document.createElement("button");
-boton.textContent = "Click";
+boton.textContent = "Guardar";
 const botonLimpiar = document.createElement("button");
 botonLimpiar.textContent = "Borrar"
 const div2 = document.createElement("div");
@@ -28,6 +21,7 @@ label.style.color = "red";
 const botonCrearObjeto = document.createElement("button");
 botonCrearObjeto.id = "botonGuardar"
 botonCrearObjeto.textContent = "Crear lista";
+const docFrag = document.createDocumentFragment();
 const array = [];
 
 contenedor.appendChild(div);
@@ -38,66 +32,87 @@ formulario.appendChild(botonLimpiar)
 contenedor.appendChild(div2);
 div2.appendChild(h1);
 
-boton.addEventListener("click", (e) => {
-    e.preventDefault();
-    const inputValor = input.value;
-    validarTarea(inputValor);
-    input.value = "";
-    if(!document.querySelector("#botonGuardar")) {
-        contenedor.appendChild(div3);
-        div3.appendChild(botonCrearObjeto);
-    }
-
-});
-
-botonLimpiar.addEventListener("click", (e)=> {
-    e.preventDefault();
-    array.splice(0,array.length)
-    console.log(array);
-    div2.removeChild(ul);
-})
+function vaciarArray (array) {
+    array.splice(0,array.length);
+}
 
 const agregarAlArray = (valor) => {
     array.push(valor)
 }
 
 const validarTarea = (textoInput) => {
-        console.log(array)
-        let existe = array.some((e) => e == textoInput);
-        if(!existe){
-            agregarTarea(textoInput);
-            agregarAlArray(textoInput);
-            label.textContent = "";
-        }else {
-            div.appendChild(label);
-            label.textContent = "La tarea ingresada ya existe";
-        }
+    let existe = array.some((e) => e == textoInput);
+    if (textoInput == ""|| textoInput == " "){
+        div.appendChild(label);
+        label.textContent = "El campo no puede ser vacío";
+    } else if(!existe){
+        agregarTarea(textoInput);
+        agregarAlArray(textoInput);
+        label.textContent = "";
+    }else {
+        div.appendChild(label);
+        label.textContent = "La tarea ingresada ya existe";
+    }
 }
 
 const agregarTarea = (texto) => {
     let lista = document.createElement("LI");
-    div2.appendChild(ul);
+    !document.querySelector("#listaDesordenada") && div2.appendChild(ul);
     ul.appendChild(lista);
     lista.textContent = texto;
 }
 
-botonCrearObjeto.addEventListener("click", (e) => {
+boton.addEventListener("click", (e) => {
     e.preventDefault();
-    const tareas = new Tareas(array, nombre);
-    console.log(`Se creo el objeto ${tareas.nombre} con la siguiente información: ${tareas.lista}`);
-    array.splice(0,array.length);
-    div2.removeChild(ul);
-    div3.removeChild(botonCrearObjeto);
-    if (!document.querySelector("#listaDesordenada")) {
-        setTimeout (() => {
-            nuevaTarea();
-        }, 1000);
-    }
+    const inputValor = input.value;
+    validarTarea(inputValor);
+    input.value = "";
+    contenedor.appendChild(div3);
+    div3.appendChild(botonCrearObjeto);
+});
+
+botonLimpiar.addEventListener("click", (e)=> {
+    e.preventDefault();
+    vaciarArray(array);
+    ul.innerHTML = "";
+    div3.remove(botonCrearObjeto);
 })
 
+botonCrearObjeto.addEventListener("click", (e) => {
+    e.preventDefault();
+    const tareas = new Tareas(array,id);
+    id++;
+    objetoString = JSON.stringify(tareas.lista);
+    console.log(tareas.lista);
+    sessionStorage.setItem(tareas.id, objetoString)
+    vaciarArray(array);
+    div2.removeChild(ul);
+    ul.innerHTML = "";
+    div3.removeChild(botonCrearObjeto);
+    nuevaTarjeta(tareas);
+})
+
+function nuevaTarjeta (objeto){
+    let producto = JSON.parse(sessionStorage.getItem(objeto.id));
+    console.log(objeto.lista, objeto.id);
+    for (let j = 0; j<= objeto.array.length; j++) {
+        let li = document.createElement("li");
+        li.textContent = producto[j];
+        docFrag.appendChild(li);
+    }
+    nueTar = `
+    <div id = ${id}>
+        <ul>
+        ${docFrag}
+        </ul>
+    </div>
+    `
+    console.log(nueTar);
+}
+
 class Tareas {
-    constructor(lista, nombre) {
+    constructor(lista,id) {
         this.lista = lista;
-        this.nombre = nombre;
+        this.id = id;
     }
 }
